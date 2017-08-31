@@ -1,4 +1,4 @@
-#!/home/selmawanna/slackbots/shoppy_bot/shoppybot/bin/python
+#!/Users/Selma/slackbots/shoppy_bot/shoppybot/bin/python
 
 import sys
 import getopt

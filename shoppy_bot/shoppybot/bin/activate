@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/selmawanna/slackbots/shoppy_bot/shoppybot"
+VIRTUAL_ENV="/Users/Selma/slackbots/shoppy_bot/shoppybot"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

@@ -2,9 +2,8 @@ import os
 import time
 from slackclient import SlackClient
 
-
 # starterbot's ID as an environment variable
-BOT_ID = os.environ.get("BOT_ID")
+BOT_ID = "U6X1BJNJJ"
 
 # constants
 AT_BOT = "<@" + BOT_ID + ">"
@@ -12,9 +11,11 @@ COMMAND_1 = "add"
 COMMAND_2 = "remove"
 COMMAND_3 = "upload"
 COMMAND_4 = "print"
+COMMAND_5 = "clear"
+COMMAND_6 = "intro"
 
 # instantiate Slack & Twilio clients
-slack_client = SlackClient(os.environ.get('SLACK_BOT_TOKEN'))
+slack_client = SlackClient("xoxb-235045634630-PWRcmRhSbSwx8jO4rNiyzgOD")
 
 
 def handle_command(command, arg, channel):
@@ -34,6 +35,11 @@ def handle_command(command, arg, channel):
         response = "uploading " + arg[2] + " this doesn't work yet"
     elif command.startswith(COMMAND_4):
         response = "SHOPPING LIST: \n" + '\n'.join(shoppingList)
+    elif command.startswith(COMMAND_5):
+        response = "Clearing all list contents"
+        shoppingList.clear()
+    elif command.startswith(COMMAND_6):
+        response = "Hi! I'm Shoppy Shopperson -- the shoppybot and personal purchasing assistant. Here is a list of my commands: \n" + "1. add -- adds item to my shopping list \n" + "2. remove -- removes item from my shopping list \n" + "3. upload -- uploads image of receipt to the shared drive. (Not Done Yet) \n" + "4. print -- displays full shopping list \n" + "5. clear -- clears entire shopping list \n" + "6. intro -- summary of commands \n" + "please do not bully me. I'm very dumb right now."
     slack_client.api_call("chat.postMessage", channel=channel,
                           text=response, as_user=True)
 

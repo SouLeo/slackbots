@@ -4,8 +4,7 @@ from slackclient import SlackClient
 
 BOT_NAME = 'shoppybot'
 
-slack_client = SlackClient(os.environ.get('SLACK_BOT_TOKEN'))
-
+slack_client = SlackClient("xoxb-235045634630-PWRcmRhSbSwx8jO4rNiyzgOD")
 
 if __name__ == "__main__":
     api_call = slack_client.api_call("users.list")

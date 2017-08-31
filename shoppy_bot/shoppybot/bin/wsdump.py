@@ -1,4 +1,4 @@
-#!/home/selmawanna/slackbots/shoppy_bot/shoppybot/bin/python2
+#!/Users/Selma/slackbots/shoppy_bot/shoppybot/bin/python
 
 import argparse
 import code
